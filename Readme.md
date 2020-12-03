@@ -36,6 +36,6 @@ where
 
 ### How to run the script
 
-> Once the encoder_decoder.ipynb is opened, please click on "open
+> Please open the encoder_decoder.ipynb file, then click on "open in Colab". Then you can execute each block of the code in Google Colab.
 
 
