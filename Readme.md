@@ -1,38 +1,32 @@
-# Python Fibonacci Series Evaluator using RESTful API(Flask)
+# LSTM encoder-decoder
 
 ## Definition of the task
 
-Write a RESTful service in Python that features the following endpoints. Try to apply general python best
-practices where applicable (i.e. imagine this will be a larger application later).
-
-1. GET /fib/<number>: Given a number, find all combinations of fibonacci number that add up to
-that particular number.
-
-Remember, the fibonacci sequence is being calculated as follows: fn = f(n−1) +f(n−2) ∀n > 2; with the first
-two numbers being f1 = f2 = 1 are excluded from the sequence, hence your f1 = 2.
-
-Example for »/fib/11« the response will be a list of all possible combinations with a status code 200.
-[ [2, 2, 2, 2, 3], [2, 2, 2, 5], [2, 3, 3, 3], [3, 3, 5], [8, 3] ]
-
-2. GET/health: Return health information about the service. Definition of »healt check« is up to you.
-You can use any framework you like. We recommend using Flask.
-
-What is important to us:
-- code efficiency and speed
-- code structure and cleanliness (a solid bet is to follow the S.O.L.I.D principles ;)
-- code testability
-- correctness of the result
-- bonus points achieved
+LSTM encoder-decoder architecture for number sorting.
 
 ## Solution
+
+1. Data Preparation
+
+Write a method to generate random integers in certain range and sort these integers. In this case the range is between 1 to 1000. 
+
+Example [355, 121, 926, 961, 88, 773, 673, 218] [88, 121, 218, 355, 673, 773, 926, 961]
+
+2. Then convert lists to Numpy Arrays and rescale the values to fit within the bounds of the activation used by LSTM.
+
+3. Create LSTM model
+
+Createa Keras model with Sequential() constructor and add LSTM layer. The ADAM optimization is used to fit the model
+
+4. Train model
+
+Fit the model on data for 5 epochs. Evaluate the model for new patterns. 
 
 ### Folder structure
 
 ```shellcript
-dir python_flask_fibonacci
-docs/
-fibonacci/
-flask_fibonaaci.py
+dir LSTM_encoder_decoder
+encoder_fibonaaci.py
 ```
 
 where
